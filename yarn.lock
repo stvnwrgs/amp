@@ -963,6 +963,10 @@ grunt-contrib-watch@^1.0.0:
     lodash "^3.10.1"
     tiny-lr "^0.2.1"
 
+grunt-express-server@^0.5.3:
+  version "0.5.3"
+  resolved "https://registry.yarnpkg.com/grunt-express-server/-/grunt-express-server-0.5.3.tgz#8236cfd16e5b5a14393464fff82a0c57137b74b8"
+
 grunt-known-options@~1.1.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/grunt-known-options/-/grunt-known-options-1.1.0.tgz#a4274eeb32fa765da5a7a3b1712617ce3b144149"

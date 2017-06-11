@@ -1,4 +1,4 @@
-module.exports = function(grunt) {
+module.exports = function (grunt) {
   "use strict";
 
   grunt.initConfig({
@@ -33,10 +33,26 @@ module.exports = function(grunt) {
         }
       }
     },
+    express: {
+      options: {
+        // Override defaults here
+      },
+      dev: {
+        options: {
+          script: 'dist/server.js'
+        }
+      },
+      prod: {
+        options: {
+          script: 'dist/server.js',
+          node_env: 'production'
+        }
+      }
+    },
     watch: {
       ts: {
         files: ["src/\*\*/\*.ts"],
-        tasks: ["ts"]
+        tasks: ["ts", "express:dev"]
       },
       views: {
         files: ["views/**/*.pug"],
@@ -48,6 +64,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks("grunt-contrib-copy");
   grunt.loadNpmTasks("grunt-contrib-watch");
   grunt.loadNpmTasks("grunt-ts");
+  grunt.loadNpmTasks("grunt-express-server");
 
   grunt.registerTask("default", [
     "copy",

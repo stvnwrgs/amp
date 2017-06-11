@@ -61,7 +61,6 @@ export class HomeRoute extends BaseRoute {
       ampComponents: this.ampComponents,
       title: "Welcome Heros",
     };
-
     //render template
     this.render(req, res, "home", options);
   }
