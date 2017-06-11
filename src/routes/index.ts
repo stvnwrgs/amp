@@ -9,6 +9,13 @@ import { BaseRoute } from "./route";
  */
 export class HomeRoute extends BaseRoute {
 
+  public ampComponents = [
+    {
+      name: "amp-sidebar",
+      src: "https://cdn.ampproject.org/v0/amp-sidebar-0.1.js",
+    }
+  ];
+
   /**
    * Create the routes.
    *
@@ -48,10 +55,11 @@ export class HomeRoute extends BaseRoute {
   public index(req: Request, res: Response, next: NextFunction) {
     //set custom title
     this.title = "Home | Tour of Heros";
-
+    console.log(this.ampComponents);
     //set message
     let options: Object = {
-      "title": "Welcome to the Tour of Heros"
+      ampComponents: this.ampComponents,
+      title: "Welcome Heros",
     };
 
     //render template

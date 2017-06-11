@@ -73,6 +73,9 @@
         </style>
     </noscript>
     <script async src="https://cdn.ampproject.org/v0.js"></script>
+    {{#each ampComponents}}
+    <script async custom-element="{{name}}" src="{{src}}"></script>
+    {{/each}}
     <style amp-custom>
         h1 {
             margin: 16px;
@@ -82,8 +85,7 @@
 
 <body>
     <h1> {{title}} </h1>
-
-    {{ body }}
+    {{{ body }}}
 </body>
 
 </html>

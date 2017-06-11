@@ -74,7 +74,11 @@ export class Server {
     //configure pug
     this.app.set("views", path.join(__dirname, "views"));
 
-    this.app.engine('handlebars', exphbs({ defaultLayout: 'main' }));
+    this.app.engine('handlebars', exphbs(
+      {
+        defaultLayout: 'main',
+      }
+    ));
     this.app.set('view engine', 'handlebars');
     this.app.locals.layout = "./main";
 
