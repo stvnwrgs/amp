@@ -71,12 +71,13 @@ export class Server {
     //add static paths
     this.app.use(express.static(path.join(__dirname, "public")));
 
-    //configure pug
+    console.log(__dirname);
     this.app.set("views", path.join(__dirname, "views"));
 
     this.app.engine('handlebars', exphbs(
       {
         defaultLayout: 'main',
+        partialsDir: "views/partials/",
       }
     ));
     this.app.set('view engine', 'handlebars');
