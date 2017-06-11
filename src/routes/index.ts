@@ -7,29 +7,29 @@ import { BaseRoute } from "./route";
  *
  * @class User
  */
-export class IndexRoute extends BaseRoute {
+export class HomeRoute extends BaseRoute {
 
   /**
    * Create the routes.
    *
-   * @class IndexRoute
+   * @class HomeRoute
    * @method create
    * @static
    */
   public static create(router: Router) {
     //log
-    console.log("[IndexRoute::create] Creating index route.");
+    console.log("[HomeRoute::create] Creating index route.");
 
     //add home page route
     router.get("/", (req: Request, res: Response, next: NextFunction) => {
-      new IndexRoute().index(req, res, next);
+      new HomeRoute().index(req, res, next);
     });
   }
 
   /**
    * Constructor
    *
-   * @class IndexRoute
+   * @class HomeRoute
    * @constructor
    */
   constructor() {
@@ -39,7 +39,7 @@ export class IndexRoute extends BaseRoute {
   /**
    * The home page route.
    *
-   * @class IndexRoute
+   * @class HomeRoute
    * @method index
    * @param req {Request} The express Request object.
    * @param res {Response} The express Response object.
@@ -51,10 +51,10 @@ export class IndexRoute extends BaseRoute {
 
     //set message
     let options: Object = {
-      "message": "Welcome to the Tour of Heros"
+      "title": "Welcome to the Tour of Heros"
     };
 
     //render template
-    this.render(req, res, "index", options);
+    this.render(req, res, "home", options);
   }
 }
